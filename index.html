@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoClone - Đoán Vị Trí Thế Giới</title>
+  <!-- Leaflet CSS cho bản đồ đoán vị trí -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Pannellum CSS để hiển thị ảnh 360 độ miễn phí không cần API Key -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Khung hiển thị cảnh 360 độ -->
+  <div id="panorama"></div>
+
+  <!-- Thanh thông tin trên cùng -->
+  <div class="hud-top">
+    <div class="hud-box">Vòng: <span id="round-display">1 / 5</span></div>
+    <div class="hud-box">Điểm: <span id="score-display">0</span></div>
+  </div>
+
+  <!-- Mini-map góc dưới bên phải -->
+  <div id="guess-container" class="guess-container">
+    <div id="map"></div>
+    <button id="guess-btn" disabled>Chọn vị trí trên bản đồ</button>
+  </div>
+
+  <!-- Bảng kết quả sau mỗi vòng -->
+  <div id="result-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="result-title">Kết quả vòng 1</h2>
+      <p id="distance-text">Bạn đoán lệch: 0 km</p>
+      <p id="points-text">+0 điểm</p>
+      <div id="result-map"></div>
+      <button id="next-btn">Vòng tiếp theo</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
